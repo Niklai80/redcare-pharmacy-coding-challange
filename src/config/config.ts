@@ -13,15 +13,11 @@ const requireEnv = (key: string, fallback?: string): string => {
 export const config = {
   server: {
     port: parseInt(process.env.PORT ?? "3000", 10),
-    nodeEnv: process.env.NODE_ENV ?? "development",
   },
 
   github: {
-    /** Personal Access Token — optional but strongly recommended to avoid rate limits */
     token: process.env.GITHUB_TOKEN,
     apiBaseUrl: "https://api.github.com",
-    /** GitHub Search API max allowed per page */
-    maxPerPage: 100,
   },
 
   scoring: {

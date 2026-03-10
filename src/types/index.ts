@@ -83,9 +83,3 @@ export interface SearchRepositoriesResponse {
   perPage: number;
   repositories: ScoredRepository[];
 }
-
-export interface ApiError {
-  status: number;
-  message: string;
-  details?: unknown;
-}

@@ -1,3 +1,6 @@
 node_modules/
 dist/
 coverage/
+
+# .env file should not be committed as it may contain sensitive information but we keep it in the repo for testing purposes. In a real project, this should be handled with environment variables or a secrets manager.
+# .env

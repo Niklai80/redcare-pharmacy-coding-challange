@@ -37,7 +37,7 @@ export function logNormalise(value: number, reference: number): number {
 /**
  * Computes a recency score in [0, 100] using exponential decay.
  *
- * @param lastPushedAt  ISO 8601 date of the last push
+ * @param lastPushedAt  Date of the last push
  * @param halfLifeDays  Days after which score halves (default: 365)
  * @param now           Override the current date (useful for testing)
  */
@@ -50,7 +50,7 @@ export function recencyScore(
     (now.getTime() - new Date(lastPushedAt).getTime()) / MS_PER_DAY;
   const lambda = Math.LN2 / halfLifeDays;
   if (daysSinceLastPush < 0) {
-    // Future push date (shouldn't happen) — treat as most recent
+    // Future push date (shouldn't happen) - treat as most recent
     return 100;
   }
   return 100 * Math.exp(-lambda * daysSinceLastPush);
